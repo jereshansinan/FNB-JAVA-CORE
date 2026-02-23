@@ -40,7 +40,7 @@ jobs:
         pip install fastapi uvicorn pymongo boto3 pytest httpx
 
     - name: Run Handshake Test
-        run: |
-          python month-03-cloud-sim/services/main.py & 
-          sleep 5
-          pytest 
+      run: |
+        python month-03-cloud-sim/services/main.py & 
+        sleep 5
+        pytest
