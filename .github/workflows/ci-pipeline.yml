@@ -41,6 +41,5 @@ jobs:
 
     - name: Run Handshake Test
       run: |
-        python month-03-cloud-sim/services/main.py & 
-        sleep 5
-        pytest
+        cd month-03-cloud-sim/services
+        pytest test_handshake.py
