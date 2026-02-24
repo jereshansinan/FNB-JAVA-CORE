@@ -47,3 +47,47 @@ resource "docker_container" "minio" {
     "MINIO_ROOT_PASSWORD=password123"
   ]
 }
+
+# 1. Create a Network so all containers can talk to each other
+resource "docker_network" "kong_net" {
+  name = "kong-net"
+}
+
+# 2. Postgres Database for Kong
+resource "docker_container" "kong_db" {
+  name  = "kong-database"
+  image = "postgres:13"
+  networks_advanced { name = docker_network.kong_net.name }
+  env = [
+    "POSTGRES_USER=kong",
+    "POSTGRES_DB=kong",
+    "POSTGRES_PASSWORD=kongpass"
+  ]
+  ports {
+    internal = 5432
+    external = 5432
+  }
+}
+
+# 3. Kong Gateway
+resource "docker_container" "kong_gateway" {
+  name  = "kong-gateway"
+  image = "kong:latest"
+  networks_advanced { name = docker_network.kong_net.name }
+  depends_on = [docker_container.kong_db]
+  env = [
+    "KONG_DATABASE=postgres",
+    "KONG_PG_HOST=kong-database",
+    "KONG_PG_PASSWORD=kongpass",
+    "KONG_PROXY_LISTEN=0.0.0.0:8000",
+    "KONG_ADMIN_LISTEN=0.0.0.0:8001"
+  ]
+  ports {
+    internal = 8000
+    external = 8000 
+  }
+  ports {
+    internal = 8001
+    external = 8001 
+  }
+}
