@@ -19,9 +19,9 @@ This repository contains my progress through the 16-week CAPACITI x FNB Data Eng
   - [x] Map AWS services to open-source tools ✅
   - [x] Install MinIO, MongoDB, and FastAPI ✅
   - [x] Draw initial architecture diagram ✅
-- [ ] **Week 2: IaC & CI/CD** ⌛ _In Progress_
-  - [ ] Configure Terraform/Ansible scripts
-  - [ ] Setup GitHub Actions pipeline
+- [x] **Week 2: IaC & CI/CD** ⌛ _In Progress_
+  - [x] Configure Terraform/Ansible scripts
+  - [x] Setup GitHub Actions pipeline
 - [ ] **Week 3: Security & API Management**
   - [ ] Deploy Kong Gateway
   - [ ] Implement simulated IAM roles
