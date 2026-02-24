@@ -15,11 +15,11 @@ This repository contains my progress through the 16-week CAPACITI x FNB Data Eng
 
 ### Month 3: Cloud Architecture (AWS Simulation)
 
-- [ ] **Week 1: Foundations & Setup** ⌛ _In Progress_
-  - [ ] Map AWS services to open-source tools
-  - [ ] Install MinIO, MongoDB, and FastAPI
-  - [ ] Draw initial architecture diagram
-- [ ] **Week 2: IaC & CI/CD**
+- [x] **Week 1: Foundations & Setup** 
+  - [x] Map AWS services to open-source tools ✅
+  - [x] Install MinIO, MongoDB, and FastAPI ✅
+  - [x] Draw initial architecture diagram ✅
+- [ ] **Week 2: IaC & CI/CD** ⌛ _In Progress_
   - [ ] Configure Terraform/Ansible scripts
   - [ ] Setup GitHub Actions pipeline
 - [ ] **Week 3: Security & API Management**

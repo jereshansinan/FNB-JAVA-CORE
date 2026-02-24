@@ -1,0 +1,45 @@
+name: FastAPI Cloud Simulation CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      mongodb:
+        image: mongo:latest
+        ports:
+          - 27017:27017
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Start MinIO Manual Container
+      run: |
+        docker run -d -p 9000:9000 -p 9001:9001 --name minio \
+          -e "MINIO_ROOT_USER=admin" \
+          -e "MINIO_ROOT_PASSWORD=password123" \
+          quay.io/minio/minio server /data --console-address ":9001"
+
+    - name: Wait for MinIO to be Ready
+      run: |
+        # Give MinIO a few seconds to initialize its drives
+        until curl -f http://localhost:9000/minio/health/live; do
+          echo "Waiting for MinIO..."
+          sleep 2
+        done
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        pip install fastapi uvicorn pymongo boto3 pytest httpx
+
+    - name: Run Handshake Test
+      run: |
+        cd month-03-cloud-sim/services
+        pytest test_handshake.py
