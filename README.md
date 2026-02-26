@@ -22,9 +22,9 @@ This repository contains my progress through the 16-week CAPACITI x FNB Data Eng
 - [x] **Week 2: IaC & CI/CD** ⌛ _In Progress_
   - [x] Configure Terraform/Ansible scripts
   - [x] Setup GitHub Actions pipeline
-- [ ] **Week 3: Security & API Management**
-  - [ ] Deploy Kong Gateway
-  - [ ] Implement simulated IAM roles
+- [x] **Week 3: Security & API Management**
+  - [x] Deploy Kong Gateway
+  - [] Implement simulated IAM roles
 - [ ] **Week 4: Monitoring & Observability**
   - [ ] Configure Prometheus & Grafana dashboards
 
