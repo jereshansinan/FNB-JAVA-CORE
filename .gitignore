@@ -3,3 +3,17 @@ __pycache__/
 minio_data/
 mongo_data/
 .env
+
+# Terraform files to ignore
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl.bkp
+
+# Docker files
+.docker/
+
+# Python files
+__pycache__/
+*.pyc
+.venv/

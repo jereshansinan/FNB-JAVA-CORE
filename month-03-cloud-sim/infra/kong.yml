@@ -1,0 +1,19 @@
+_format_version: "3.0"
+_transform: true
+
+services:
+  - name: fnb-backend
+    url: http://172.17.0.1:8000
+    routes:
+      - name: bank-entry-point
+        paths:
+          - /bank
+
+plugins:
+  - name: key-auth
+    service: fnb-backend
+
+consumers:
+  - username: mobile-app-user
+    keyauth_credentials:
+      - key: fnb-secret-123
