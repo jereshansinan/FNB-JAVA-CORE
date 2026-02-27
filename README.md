@@ -15,7 +15,7 @@ This repository contains my progress through the 16-week CAPACITI x FNB Data Eng
 
 ### Month 3: Cloud Architecture (AWS Simulation)
 
-- [x] **Week 1: Foundations & Setup** 
+- [x] **Week 1: Foundations & Setup**
   - [x] Map AWS services to open-source tools ✅
   - [x] Install MinIO, MongoDB, and FastAPI ✅
   - [x] Draw initial architecture diagram ✅
@@ -24,7 +24,7 @@ This repository contains my progress through the 16-week CAPACITI x FNB Data Eng
   - [x] Setup GitHub Actions pipeline
 - [x] **Week 3: Security & API Management**
   - [x] Deploy Kong Gateway
-  - [] Implement simulated IAM roles
+  - [x] Implement simulated IAM roles
 - [ ] **Week 4: Monitoring & Observability**
   - [ ] Configure Prometheus & Grafana dashboards
 
